@@ -18,14 +18,9 @@ jobs:
     - name: Show Working directory
       run: ls
 
+
     - name: Zip Chocapic13_V6_High artifact
       run: zip Chocapic13_V6_High.zip ./Chocapic13_V6_High/* -r
-
-    - name: Zip SEUS Renewed TFG v1.0 artifact
-      run: zip "SEUS Renewed TFG v1.0.zip" "./SEUS Renewed TFG v1.0/*" -r
-
-    - name: Zip Sildur's+Vibrant+Shaders+v1.32+Extreme-VL artifact
-      run: zip "Sildur's+Vibrant+Shaders+v1.32+Extreme-VL.zip" "./Sildur's+Vibrant+Shaders+v1.32+Extreme-VL/*" -r
 
     - name: Publish Chocapic13_V6_High artifact
     - uses: tfc-survival/upload-artifact@v0.9
@@ -33,14 +28,22 @@ jobs:
         name: Chocapic13_V6_High.zip
         path: ./Chocapic13_V6_High.zip
 
+
+    - name: Zip SEUS_Renewed_TFG artifact
+      run: zip SEUS_Renewed_TFG.zip ./SEUS_Renewed_TFG/* -r
+
     - name: Publish SEUS Renewed TFG v1.0 artifact
     - uses: tfc-survival/upload-artifact@v0.9
       with:
         name: SEUS Renewed TFG v1.0.zip
         path: ./SEUS Renewed TFG v1.0.zip
 
-    - name: Publish Sildur's+Vibrant+Shaders+v1.32+Extreme-VL.zip artifact
+
+    - name: Zip Sildurs_Vibrant_Shaders artifact
+      run: zip Sildurs_Vibrant_Shaders.zip ./Sildurs_Vibrant_Shaders/* -r
+
+    - name: Publish Sildurs_Vibrant_Shaders artifact
     - uses: tfc-survival/upload-artifact@v0.9
       with:
-        name: Sildur's+Vibrant+Shaders+v1.32+Extreme-VL.zip
-        path: ./Sildur's+Vibrant+Shaders+v1.32+Extreme-VL.zip
+        name: Sildurs_Vibrant_Shaders.zip
+        path: ./Sildurs_Vibrant_Shaders.zip
