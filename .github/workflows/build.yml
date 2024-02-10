@@ -32,11 +32,11 @@ jobs:
     - name: Zip SEUS_Renewed_TFG artifact
       run: zip SEUS_Renewed_TFG.zip ./SEUS_Renewed_TFG/* -r
 
-    - name: Publish SEUS Renewed TFG v1.0 artifact
+    - name: Publish SEUS_Renewed_TFG artifact
       uses: tfc-survival/upload-artifact@v0.9
       with:
-        name: SEUS Renewed TFG v1.0.zip
-        path: ./SEUS Renewed TFG v1.0.zip
+        name: SEUS_Renewed_TFG.zip
+        path: ./SEUS_Renewed_TFG.zip
 
 
     - name: Zip Sildurs_Vibrant_Shaders artifact
