@@ -1,0 +1,46 @@
+name: build shaders to zip
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4.1.1
+    
+    - name: Show Working directory
+      run: ls
+
+    - name: Zip Chocapic13_V6_High artifact
+      run: zip Chocapic13_V6_High.zip ./Chocapic13_V6_High/* -r
+
+    - name: Zip SEUS Renewed TFG v1.0 artifact
+      run: zip "SEUS Renewed TFG v1.0.zip" "./SEUS Renewed TFG v1.0/*" -r
+
+    - name: Zip Sildur's+Vibrant+Shaders+v1.32+Extreme-VL artifact
+      run: zip "Sildur's+Vibrant+Shaders+v1.32+Extreme-VL.zip" "./Sildur's+Vibrant+Shaders+v1.32+Extreme-VL/*" -r
+
+    - name: Publish Chocapic13_V6_High artifact
+    - uses: tfc-survival/upload-artifact@v0.9
+      with:
+        name: Chocapic13_V6_High.zip
+        path: ./Chocapic13_V6_High.zip
+
+    - name: Publish SEUS Renewed TFG v1.0 artifact
+    - uses: tfc-survival/upload-artifact@v0.9
+      with:
+        name: SEUS Renewed TFG v1.0.zip
+        path: ./SEUS Renewed TFG v1.0.zip
+
+    - name: Publish Sildur's+Vibrant+Shaders+v1.32+Extreme-VL.zip artifact
+    - uses: tfc-survival/upload-artifact@v0.9
+      with:
+        name: Sildur's+Vibrant+Shaders+v1.32+Extreme-VL.zip
+        path: ./Sildur's+Vibrant+Shaders+v1.32+Extreme-VL.zip
